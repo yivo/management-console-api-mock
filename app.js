@@ -69,15 +69,10 @@ function randomConsoleTitle() {
 }
 
 function randomConsoleButtons() {
-  return _.map(_.times(_.random(0, 15)), function(i) {
+  return _.map(_.times(_.random(0, 20)), function(i) {
     return {
       id:          i + 1,
-      title:       _(faker.lorem.words(_.random(1, 5)).split(/\s+/))
-                    .map(_.capitalize)
-                                              // Add a new line with 20% probability
-                    .map(function(w) { return Math.random() <= 0.2 ? [w, '\n'] : w;  })
-                    .flatten()
-                    .join(' '),
+      title:       faker.company.companyName(),
       description: faker.lorem.paragraph()
     };
   });
