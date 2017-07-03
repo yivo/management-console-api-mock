@@ -2,10 +2,13 @@ if (typeof PhusionPassenger !== 'undefined') {
   PhusionPassenger.configure({autoInstall: false});
 }
 
-var express = require('express');
-var faker   = require('faker');
-var _       = require('lodash');
-var app     = express();
+var express    = require('express');
+var faker      = require('faker');
+var _          = require('lodash');
+var bodyParser = require('body-parser')
+var app        = express();
+
+app.use(bodyParser.json());
 
 app.get('/clients/:id/buttons', function(req, res) {
   requireAccessKey(req, res, function() {
@@ -24,7 +27,7 @@ app.post('/clients/:id/events', function(req, res) {
   requireAccessKey(req, res, function() {
     requireAvailableClient(req, res, function() {
       requireNotBannedClient(req, res, function() {
-        res.status(req.params.buttonID ? 201 : 422).send();
+        res.status(req.body.buttonID ? 201 : 422).send();
       });
     });
   });

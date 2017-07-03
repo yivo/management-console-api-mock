@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yivo/management-console-api-mock#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "faker": "^4.1.0",
     "lodash": "^4.17.4"
