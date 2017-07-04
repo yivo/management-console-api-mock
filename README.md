@@ -10,7 +10,7 @@
 
 `faker.lorem.paragraph()` is used for button description.
 
-Application uses `express` web framework, nginx as a web server and Passenger as an app server.
+Application uses `express` web framework, `nginx` as a web server and `Passenger` as an app server.
 
 ## Prerequisites
 
