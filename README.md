@@ -29,7 +29,11 @@ Returns console title and buttons in JSON format.
 
 The number of returned buttons may vary from 0 to 20: [0;20] (both inclusive).
 
+Test by yourself: `curl --verbose --header "X-API-Key: XXX" http://management-console-api-mock.site/clients/1/buttons`.
+
 ## `POST /clients/:clientID/events`
 Logs user event. Requires JSON with `buttonID` in request body.
 
 Returns nothing. If success `201` is returned, otherwise `422`.
+
+Test by yourself: `curl --verbose --header "X-API-Key: XXX" --header "Content-Type: application/json; charset=UTF-8" --data "{\"buttonID\": \"1\"}" http://management-console-api-mock.site/clients/1/events`.
