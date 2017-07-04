@@ -27,6 +27,8 @@ If client is found but he is banned `403` will be returned.
 ## `GET /clients/:clientID/buttons`
 Returns console title and buttons in JSON format.
 
+The number of returned buttons may vary from 0 to 20: [0;20] (both inclusive).
+
 ## `POST /clients/:clientID/events`
 Logs user event. Requires JSON with `buttonID` in request body.
 
